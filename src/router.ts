@@ -4,6 +4,8 @@ import Home from './views/Home.vue';
 import Structure from './views/Structure.vue';
 import About from './views/About.vue';
 import Webparts from './views/Webparts.vue';
+import Access from './views/Access.vue';
+
 
 Vue.use(Router);
 
@@ -13,7 +15,8 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
-    },{
+    },
+    {
       path: '/structure',
       name: 'structure',
       component: Structure,
@@ -24,6 +27,11 @@ export default new Router({
           component: Webparts,
         },
       ]
+    },
+    {
+      path: '/access',
+      name: 'access',
+      component: Access,
     },
     {
       path: '/webparts',

@@ -1,32 +1,57 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> | 
-      <router-link to="/webparts">Webparts</router-link>
+      <menu-item navigateTo="home" icon="home"></menu-item>
+      <menu-item navigateTo="structure" icon="database"></menu-item>
+      <menu-item navigateTo="access" icon="address-book"></menu-item>
+      <menu-item navigateTo="webparts" icon="address-card"></menu-item>
     </div>
-    <router-view/>
+    <div id="content">
+      <router-view/>
+    </div>
   </div>
 </template>
+
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import MenuItem from '@/components/infra/menu-item.vue'
+
+@Component({
+  components: {
+    MenuItem
+  }
+})
+export default class App extends Vue {}
+
+</script>
 
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
+  
 }
 #nav {
-  padding: 30px;
+  width: 50px;
+  float:left;
+  margin-right:5px;
+  background: #2c3e50;
+}
+
+#content {
+  float: left;
 }
 
 #nav a {
-  font-weight: bold;
-  color: #2c3e50;
+  color: darkgray;
+  margin: 10px;
+  z-index: 10;
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: white;
 }
 </style>
